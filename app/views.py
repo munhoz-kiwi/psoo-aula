@@ -79,3 +79,17 @@ class DeleteLivroView(View):
 
         messages.error(request, "Corrija os erros no formulário.")
         return render(request, self.template_name, {"livro": livro, "form": form})
+    from django.views import View
+from django.shortcuts import redirect, get_object_or_404
+from .models import Livro
+
+
+class DeleteLivroView(View):
+
+    def get(self, request, id):
+
+        livro = get_object_or_404(Livro, id=id)
+
+        livro.delete()
+
+        return redirect("livros")

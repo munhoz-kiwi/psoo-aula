@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Autores</title>
+
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <a class="navbar-brand" href="/">Biblioteca</a>
+</nav>
+
+<div class="container mt-5">
+
+<h2>Autores</h2>
+
+<table class="table table-bordered">
+
+<thead>
+<tr>
+<th>Nome</th>
+<th>Cidade</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for autor in autores %}
+<tr>
+<td>{{ autor.nome }}</td>
+<td>{{ autor.cidade }}</td>
+</tr>
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</body>
+</html>
